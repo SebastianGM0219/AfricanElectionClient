@@ -1,0 +1,1380 @@
+body {
+  overflow-x: hidden;
+}
+
+.Home .main-section {
+  width: 100vw;
+  height: calc(100vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../assets/images/Banner Image.jpg");
+  /* The image used */
+
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: 100% auto;
+  margin-top: -60px;
+}
+
+.Home .Big-heading {
+  font-size: 95px;
+  font-weight: 900;
+
+  text-align: center;
+
+}
+
+.Home .Big-heading .ELEC {
+  display: block;
+}
+
+.Home .THE {
+  color: white;
+}
+
+.Home .AFR {
+  color: brown;
+  -webkit-text-stroke: 1px #d8d8d8;
+  /* Set the border color and width (for WebKit browsers) */
+
+}
+
+.Home .ELEC {
+  color: transparent;
+  -webkit-text-stroke: 1px #d8d8d8;
+  /* Set the border color and width (for WebKit browsers) */
+}
+
+.Home .opening-comma {
+  color: gold;
+}
+
+.Home .Big-heading span {
+  font-family: sans-serif;
+  line-height: 1;
+}
+
+.Home .How-To-Vote {
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Home .cont {
+  width: 25%;
+}
+
+.Home .search {
+  width: 45%;
+  background-color: #B52323;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+
+
+}
+
+.Home .cont p {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.Home .cont .year {
+  color: white;
+  -webkit-text-stroke: 1px #202020;
+  /* Set the border color and width (for WebKit browsers) */
+
+}
+
+.Home .search input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+}
+
+.Home .search button {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #FFD820;
+  color: #B52323;
+  font-size: 18px;
+  font-weight: 700;
+
+
+
+
+}
+
+/* Add this CSS to your stylesheet or component-specific CSS file */
+.PageWithThreeContainer {
+  padding: 50px 100px;
+  background-color: #F6F6F6;
+  padding-top: 0px;
+}
+
+.data-card {
+
+  padding: 80px 20px;
+  padding-bottom: 20px;
+  margin: 10px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.data-card:hover {
+  background-color: #B52323;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+/* Use CSS Grid for layout */
+.data-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  /* Adjust the minimum card width as needed */
+  gap: 20px;
+  justify-content: space-between;
+  width: 70%;
+  margin: 0 auto;
+
+}
+
+.news {
+
+  padding: 100px;
+  padding-top: 20px;
+
+}
+
+.center-image .content img {
+  width: 80%;
+}
+
+.image-container {
+  position: relative;
+  display: flex;
+}
+
+.left-image {
+
+  z-index: -1;
+}
+
+.left-image img {
+  position: absolute;
+  width: 16%;
+  left: 8%;
+  top: -10%;
+}
+
+.center-image {
+  width: 70%;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.news .content {
+  position: absolute;
+  /* height: auto; */
+  text-align: center;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+}
+
+.right-image {}
+
+.right-image img {
+  position: absolute;
+  right: 7%;
+  z-index: -1;
+  width: 11%;
+  top: -2%;
+
+}
+
+.center-image .content h1 {
+  font-size: 25px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.center-image .content button {
+  border: 1px solid #B52323;
+  border-radius: 7px;
+  padding: 5px 30px;
+  margin-top: 25px;
+
+}
+
+.center-image .content p {
+  font-size: 14px;
+  text-align: left;
+  font-weight: 500;
+}
+
+.center-image .content div {
+  width: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact {
+
+  position: relative;
+  height: 100vh;
+  background-color: #F6F6F6;
+
+  z-index: 1;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.c-t {
+  width: 50%;
+  position: absolute;
+  left: 13%;
+  z-index: -1;
+  top: 26%;
+
+
+}
+
+.c-f {
+
+  width: 40%;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  right: 20%;
+  top: 15%;
+  padding: 25px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.c-t img {
+  width: 70%;
+}
+
+.c-f input {
+  border: 1px solid lightgray;
+  margin: 10px;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  padding: 7px;
+  border-radius: 5px;
+  outline: none;
+  padding-left: 15px;
+  color: rgb(163, 163, 163);
+  font-size: 14px;
+
+}
+
+.c-f input::placeholder {
+  color: rgb(197, 197, 197);
+}
+
+.c-f textarea::placeholder {
+  color: rgb(197, 197, 197);
+}
+
+
+.c-f textarea {
+  border: 1px solid lightgray;
+  margin: 10px;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  padding: 7px;
+  border-radius: 5px;
+  outline: none;
+  padding-left: 15px;
+
+  font-size: 14px;
+}
+
+.c-f button {
+  border: 1px solid #B52323;
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 columns for large screens */
+  gap: 20px;
+  /* Gap between grid items */
+  padding: 100px;
+  background-color: #000;
+}
+
+.grid-item {
+
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #000;
+}
+
+.grid-item h2 {
+  color: white;
+}
+
+.grid-item ul li {
+  color: white;
+}
+
+.grid-item span {
+  color: white;
+}
+
+.grid-item button {
+  color: white;
+  background-color: gold;
+  width: 100%;
+  margin-top: 10px;
+
+}
+
+.grid-item input {
+  width: 100%;
+}
+
+.grid-item .form {
+  background-color: #B52323;
+  padding: 20px;
+}
+
+/* Media query for screens smaller than a certain width */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns for medium screens */
+  }
+}
+
+/* Media query for screens smaller than a certain width */
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    /* 1 column for small screens */
+  }
+}
+
+
+.data-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.data-heading h3 {
+  color: #B52323;
+  margin: 40px 0px;
+  font: 14px;
+  font-weight: 600;
+}
+
+.data-heading span {
+  height: 2px;
+  width: 50px;
+  background-color: #B52323;
+  margin: 10px;
+
+}
+
+/* TeamSection.css */
+
+.team-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  /* Adjust the gap between team members as needed */
+  padding: 50px 100px;
+  /* Responsive Styles */
+  padding-top: 0px;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    /* Center team members on smaller screens */
+  }
+}
+
+.team-section-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  gap: 20px;
+  justify-content: space-between;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.team-member {
+  padding: 20px 20px;
+  padding-bottom: 20px;
+  margin: 10px;
+  text-align: center;
+
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+
+
+.team-member img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.team-member h3 {
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.team-member p {
+  font-size: 14px;
+}
+
+.Election {
+  width: 70%;
+  margin: 0 auto;
+  padding: 100px;
+  padding-top: 0px;
+  padding-bottom: 50px;
+}
+
+.button-container button {
+  width: 50%;
+  background-color: #e3d0d4;
+  border-radius: 4px;
+  padding: 9px;
+  font-weight: 700;
+
+}
+
+.button-container .active {
+  background-color: #B52323;
+}
+
+.Election ul {
+  margin-top: 50px !important;
+  margin-left: 30px !important;
+}
+
+.Election ul li {
+  font-weight: 700;
+  font-size: 18px;
+  list-style: initial;
+
+}
+
+.mapview {
+  padding: 100px;
+  text-align: center;
+  padding-top: 0px;
+}
+
+.mapview h2 {
+  font-size: 30px;
+
+  font-weight: 700;
+}
+
+.mapview .mapviewdiv h2 {
+  font-size: 30px;
+  width: 15%;
+  font-weight: 700;
+}
+
+.presedential {
+  padding: 100px;
+  text-align: center;
+}
+
+.presedential h2 {
+  font-size: 30px;
+
+  font-weight: 700;
+}
+
+.mapview .mapviewdiv {
+  padding-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.mapview .mapviewdiv img {
+  width: 40%;
+}
+
+.mapview h2 span {
+  color: white;
+  -webkit-text-stroke: 1px black;
+
+
+}
+
+.Turnout {
+  padding: 0px 100px;
+  padding-top: 0px;
+  text-align: center;
+}
+
+.Turnout h2 {
+  font-size: 30px;
+  margin-top: 30px;
+  font-weight: 700;
+}
+
+.Turnout #chart {
+  padding: 100px 0px;
+}
+
+.AbroadVote {
+  display: flex;
+  justify-content: center;
+  background-color: #e3d0d4;
+  padding: 50px;
+}
+
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  padding: 100px;
+}
+
+.heading-abroad {
+  text-align: center;
+}
+
+.heading-abroad h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.progress-item {
+  margin-bottom: 10px;
+}
+
+.label {
+  z-index: 10000;
+  position: absolute;
+  top: 21%;
+  margin-left: 30px;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+.progress-bar {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background-color: #f0f0f0;
+  border-radius: 31px;
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+.filled-bar {
+  height: 100%;
+  background-color: #4caf50;
+  transition: width 0.5s ease-in-out;
+  border-radius: 30px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.marker {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  color: white;
+}
+
+.marker img {
+  margin-right: 5px !important;
+  max-height: 100% !important;
+  max-width: none !important;
+  border-radius: 50%;
+
+}
+
+/* Adjust styling as needed */
+.progress-container .item1 {
+  background: linear-gradient(180deg, rgba(0, 209, 255, 0.55) 0%, #036D84 100%);
+
+}
+
+.progress-container .per1 {
+  color: #00D1FF;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.progress-container .item2 {
+  background: linear-gradient(180deg, rgba(0, 71, 255, 0.55) 0%, #2C0384 100%);
+
+}
+
+.progress-container .per2 {
+  color: #3C11E5;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.progress-container .item3 {
+  background: linear-gradient(180deg, rgba(51, 255, 0, 0.55) 0%, #038410 100%);
+
+}
+
+.progress-container .per3 {
+  color: #08EF1F;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.progress-container .item4 {
+  background: linear-gradient(180deg, rgba(255, 216, 32, 0.55) 0%, #D6B20A 100%);
+
+}
+
+.progress-container .per4 {
+  color: #FFD820;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.progress-container .item5 {
+  background: linear-gradient(180deg, rgba(181, 35, 35, 0.55) 0%, #B00707 100%);
+
+}
+
+.progress-container .per5 {
+  color: #B52323;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.progress-container .spans {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  position: absolute;
+  right: 30px;
+  margin-top: -60px;
+}
+
+.progress-container .vo {
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.progress-container {
+  text-align: center;
+}
+
+.progress-container h2 {
+  font-size: 30px;
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+
+.EmailPhon {
+  padding: 100px;
+  text-align: center;
+}
+
+.man-contact {
+  background-color: #B52323;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.man-contact .img {
+  width: 40%;
+}
+
+.man-contact .boxes {
+  display: flex;
+  gap: 10px;
+  width: 60%;
+}
+
+.man-contact .boxes div {
+  background-color: white;
+  width: 47%;
+  padding: 50px 0px;
+  border-radius: 10px;
+
+}
+
+.boxes h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #B52323;
+}
+
+.boxes p {
+  font-weight: 600;
+}
+
+.news .newsdetail {
+  flex-direction: column-reverse;
+}
+
+/* Container for the news cards */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* Adjust as needed for spacing between cards */
+  gap: 20px;
+  /* Adjust as needed for spacing between cards */
+  padding: 0px 100px;
+}
+
+/* Individual news card */
+.card-container .card {
+  width: calc(33.33% - 20px);
+  /* 33.33% for three cards in a row, minus gap */
+  background-color: #e3d0d4;
+  /* Adjust background color as needed */
+  border: 1px solid #ccc;
+  /* Add a border as desired */
+  padding: 20px;
+  /* Adjust padding as needed */
+  box-sizing: border-box;
+  cursor: pointer;
+  /* Add a pointer cursor on hover */
+  transition: background-color 0.3s;
+  /* Smooth background color transition on hover */
+  border-radius: 16px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .card-container .card {
+    width: calc(100%);
+  }
+}
+
+/* Hover effect */
+.card-container .card:hover {
+  background-color: #B52323;
+  /* Adjust hover background color as needed */
+  transform: scale(1.03);
+  /* Add a slight scale effect on hover */
+}
+
+.news-items {
+  padding: 100px;
+  padding-top: 0px;
+}
+
+.card-container .active {
+  background-color: #B52323;
+}
+
+.news-items .pagination {
+  padding: 100px;
+  padding-top: 50px;
+}
+
+.pagination {
+  gap: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.pagination button {
+  padding: 3px 5px;
+  border-radius: 50%;
+
+}
+
+.pagination .active {
+  background-color: #B52323;
+  padding: 3px 5px;
+  border-radius: 50%;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 120vh;
+  /* Set the height to 100% of the viewport height */
+  max-width: none;
+  margin-top: -65px;
+  z-index: -1;
+}
+
+/* The image */
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Maintain aspect ratio and cover container */
+}
+
+/* The overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent black overlay */
+}
+
+/* Centered text */
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-size: 24px;
+}
+
+.c-t h2 {
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 50px;
+}
+
+.c-t p {
+  width: 42%;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.news-detail {
+  margin-top: 10px;
+  padding-bottom: 0px;
+}
+
+@media(max-width:768px) {
+  .container {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    max-width: none;
+    margin-top: -65px;
+    z-index: -1;
+  }
+
+  .Home .Big-heading {
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 40px;
+  }
+
+  .Home .How-To-Vote {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .Home .cont {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .Home .search {
+    width: 100%;
+    background-color: #B52323;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+  }
+
+  .PageWithThreeContainer {
+    padding: 20px 20px;
+    background-color: #F6F6F6;
+    padding-top: 0px;
+  }
+
+  .contact {
+    position: inherit;
+    height: auto;
+    background-color: #F6F6F6;
+    z-index: 1;
+    padding: 20px;
+  }
+
+  .team-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 20px;
+  }
+
+  .team-section-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .data-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .Home .cont p {
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.5;
+  }
+
+  .Election {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 0px;
+
+  }
+
+  .p-9 {
+    padding: 20px 20px;
+    background-color: #F6F6F6;
+    padding-top: 0px;
+  }
+
+  .news {
+    padding: 20px;
+  }
+
+  .news-items {
+    padding: 20px;
+    padding-top: 0px;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0px 0px;
+  }
+
+  .news-items .pagination {
+    padding: 38px;
+    padding-top: 50px;
+  }
+
+  .progress-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .progress-container h2 {
+    font-size: 25px;
+    margin-bottom: 30px;
+    font-weight: 700;
+  }
+
+  .progress-container .spans {
+    display: flex;
+    flex-direction: column;
+    margin-left: -41px;
+    margin-top: 0px;
+  }
+
+  .label {
+    z-index: 10000;
+    position: absolute;
+    top: 26%;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+  }
+
+  .mapview {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .mapview .mapviewdiv {
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+
+  .mapview .mapviewdiv h2 {
+    font-size: 25px;
+    width: 80%;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .mapview .mapviewdiv img {
+    width: 90%;
+  }
+
+  .mapview h2 {
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+  .AbroadVote {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0px;
+  }
+
+  .Turnout {
+    padding: 0px 20px;
+    padding-top: 0px;
+    text-align: center;
+  }
+
+  .Turnout h2 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 30px;
+  }
+
+  .grid-container {
+
+    padding: 50px;
+
+  }
+
+  .grid-item .form {
+    background-color: #B52323;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .EmailPhon {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .man-contact {
+    background-color: #B52323;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+  }
+
+  .man-contact .boxes div {
+    background-color: white;
+    width: 100%;
+    padding: 11px 0px;
+    border-radius: 10px;
+  }
+
+  .man-contact .boxes {
+    display: flex;
+    gap: 10px;
+    width: 60%;
+    flex-direction: column;
+  }
+
+  .boxes p {
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .contact-content {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column-reverse;
+  }
+
+  .c-t {
+    width: 100%;
+    position: inherit;
+    left: 13%;
+    z-index: 0;
+    top: 26%;
+  }
+
+  .c-f {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    position: inherit;
+    right: 20%;
+    top: 15%;
+    padding: 25px;
+    text-align: center;
+    border-radius: 20px;
+    z-index: 1111;
+  }
+
+  .c-t p {
+    width: 99%;
+    margin-top: 12px;
+    font-size: 16px;
+  }
+
+  .c-t img {
+    width: 100%;
+    top: -30px;
+    margin-top: -20px;
+  }
+
+  .c-t h2 {
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 50px;
+  }
+}
+
+.container1 {
+  position: relative;
+  width: 80%;
+  height: 90vh;
+  margin: 0 auto;
+
+}
+
+/* Images */
+.left-image,
+.center-image,
+.right-image {
+  position: absolute;
+  height: 40%;
+  /* Adjust the height as needed */
+}
+
+.container1 .left-image {
+  left: -23px;
+  width: 12%;
+  top: -31px;
+}
+
+.container1 .center-image {
+  left: 2%;
+  z-index: 2;
+  width: 84%;
+}
+
+.container1 .right-image {
+  right: 73px;
+  width: 13%;
+  top: -1px;
+}
+
+/* Content on the center image */
+.container1 .content {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: black;
+  z-index: 111;
+}
+
+/* Additional styling for images (sample styles) */
+.container1 img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cnter-c {
+  display: flex;
+  gap: 20px;
+}
+
+.cnter-c div {
+  width: 50%;
+  text-align: left;
+
+}
+
+.cnter-c button {
+  border: 1px solid #B52323;
+  border-radius: 3px;
+  padding: 6px;
+  margin-top: 20px;
+  width: 120px;
+}
+
+.content-flex h2 {
+  font-weight: 800;
+  font-size: 20px;
+  text-align: left;
+}
+
+.content-flex p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+}
+
+.news-detail {
+  margin-top: 70px;
+}
+
+.news-detail .cnter-c {
+  display: flex;
+  gap: 20px;
+  flex-direction: column-reverse;
+}
+
+.news-detail .cnter-c div {
+  width: 80%;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.content-flex .img {
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media(max-width:768px) {
+  .cnter-c {
+    display: flex;
+    gap: 20px;
+    flex-direction: column-reverse;
+  }
+
+  .container1 .content {
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: black;
+    z-index: 111;
+    width: 100%;
+  }
+
+  .container1 {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    margin: 0 auto;
+  }
+
+  .cnter-c div {
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+  }
+
+  .container1 .center-image {
+    left: 2%;
+    z-index: 2;
+    width: 84%;
+    display: none;
+  }
+
+  .container1 .right-image {
+    right: 0px;
+    width: 13%;
+    top: -45px;
+  }
+
+  .news .data-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+
+  .container1 .left-image {
+    left: -10px;
+    width: 12%;
+    top: -81px;
+  }
+
+  .news-detail .container1 .left-image {
+    left: -10px;
+    width: 12%;
+    top: 53px;
+  }
+
+  .news-detail .container1 .right-image {
+    right: 0px;
+    width: 13%;
+    top: 94px;
+  }
+
+  .heading-abroad h2 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+
+  .progress-bar {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: #f0f0f0;
+    border-radius: 31px;
+    margin-bottom: 50px;
+    text-align: left;
+  }
+}

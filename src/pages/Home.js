@@ -1,0 +1,55 @@
+import React from "react";
+import '../style/Home.css'
+import About from "../components/About/About";
+import HowWeVote from "../components/Vote/HowWeVote";
+import DataSection from "../components/Data/DataSection";
+import PageWithThreeCards from "../components/Data/PageWithThreeCards";
+import News from "../components/News/News";
+import Contact from "../components/Contact/Contact";
+import Footer from "../components/Footer/Footer";
+import home from '../assets/images/Banner Image.jpg'
+const Home = () => {
+
+  return (
+    <>
+
+      <div className="Home">
+        <div class="container">
+          <img class="image" src={home} alt="Responsive Image" />
+          <div class="overlay"></div>
+          <div className="text Big-heading">
+          <p>
+          <span className="opening-comma">“</span>
+          <span className="THE">THE </span>
+          <span className="AFR">AFRICA </span>
+          <span className="ELEC">ELECTIONS </span>
+          <span className="THE">PLACE</span>
+          <span className="opening-comma">” </span>
+          </p>
+        </div>
+        </div>
+        {/* <div className="main-section">
+        <div className="Big-heading">
+          <p>
+          <span className="opening-comma">“</span>
+          <span className="THE">THE </span>
+          <span className="AFR">AFRICA </span>
+          <span className="ELEC">ELECTIONS </span>
+          <span className="THE">PLACE</span>
+          <span className="opening-comma">” </span>
+          </p>
+        </div>
+      </div> */}
+        <HowWeVote />
+        <About />
+        <PageWithThreeCards />
+        <News />
+        <Contact />
+        <Footer />
+      </div>
+    </>
+  );
+};
+
+
+export default Home;
