@@ -7,7 +7,7 @@ const Mapview =()=>{
             <h2>MAP VIEW</h2>
             <div className="mapviewdiv">
                 <h2>TOTAL NUMBER OF <span>STATE</span> 54</h2>
-                <img src={map} alt="" />
+                <img src={map}  />
             </div>
         </div>
         </>

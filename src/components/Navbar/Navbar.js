@@ -8,7 +8,7 @@ const Navbar =()=>{
     return (
         <nav className="navigation">
           <a href="/" className="brand-name">
-            <img src={logo} alt="" />
+            <img src={logo}  />
           </a>
           <button onClick={() => {
           setIsNavExpanded(!isNavExpanded);

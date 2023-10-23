@@ -12,7 +12,7 @@ const Contact = () => {
                 </div>
                 <div className="contact-content">
                     <div className="c-t">
-                        <img src={contacttext} alt="" />
+                        <img src={contacttext}  />
                         <h2>Book your appointment</h2>
                         <p>Fill out this form and we promise to get back to you within 24 hours
                         </p>

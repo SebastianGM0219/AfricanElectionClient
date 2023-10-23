@@ -13,7 +13,7 @@ const NewsCard = ({ data, onClick, isSelected }) => {
             className={`card ${isSelected ? "active" : ""}`}
             onClick={() => onClick(data)}
         >
-            <img src={data.img} alt="" />
+            <img src={data.img}  />
             <h2>{data.title}</h2>
             <p>{data.des}</p>
         </div>
@@ -132,7 +132,7 @@ const NewsPage = () => {
 
                             </div>
                                 <div className="img">
-                                    <img src={selectedNews ? selectedNews.img : ""} alt="" />
+                                    <img src={selectedNews ? selectedNews.img : ""}  />
                                 </div></div>
 
 

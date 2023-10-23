@@ -25,7 +25,7 @@ const News = () => {
                             <button>Recnt News</button>
                         </div>
                         <div className="img">
-                            <img src={newsbox} alt="" />
+                            <img src={newsbox}  />
                         </div></div>
                        
 

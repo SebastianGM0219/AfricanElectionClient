@@ -7,7 +7,7 @@ const EmailPhone = () => {
             <div className="EmailPhon">
                 <div className="man-contact">
                     <div className="img">
-                    <img src={man} alt="" />
+                    <img src={man}  />
                     </div>
                     
                     <div className="boxes">

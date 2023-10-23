@@ -5,7 +5,7 @@ const Footer = () => {
         <>
             <div className="grid-container">
                 <div className="grid-item">
-                    <img src={logo} alt="" />
+                    <img src={logo}  />
                 </div>
                 <div className="grid-item">
                     <ul>

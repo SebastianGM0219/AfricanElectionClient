@@ -10,8 +10,8 @@ const About =()=>{
       <div className="About">
         <div className="About-images">
             <div className="About-image-relative">
-                <img className="voted-img" src={Voteimg} alt="" />
-                <img className="About-image-absolute" src={Aboutimg} alt="" />
+                <img className="voted-img" src={Voteimg}  />
+                <img className="About-image-absolute" src={Aboutimg}  />
             </div>
             
             
