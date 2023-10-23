@@ -2,14 +2,14 @@ import React from 'react'
 import '../style/Home.css'
 import About from "../components/About/About";
 import HowWeVote from "../components/Vote/HowWeVote";
-import DataSection from "../components/Data/DataSection";
-import PageWithThreeCards from "../components/Data/PageWithThreeCards";
+
 import News from "../components/News/News";
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import TeamSection from '../components/Team/TeamSection';
 import teamData from '../components/Team/teamData';
 import about from '../assets/images/About-bg.jpg'
+import DataCard from '../components/Data/DataCard';
 const AboutPage = () => {
     return (
         <>
@@ -28,7 +28,7 @@ const AboutPage = () => {
                 </div>
                 <HowWeVote />
                 <About />
-                <PageWithThreeCards />
+                <DataCard/>
                 <TeamSection teamData={teamData}/>
                 <News />
                 <Contact />

@@ -1,0 +1,40 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  
+  .data-card {
+    width: 35%; /* This will make two cards appear in a row */
+    padding: 36px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: 18px;
+    border-bottom: 3px solid #b52323;
+    text-align: left;
+  }
+  .data-card:hover {
+    background-color: #b52323;
+    transition: 0.3s ease;
+    color: white;
+
+  }
+  .data-card h2{
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .data-card h1{
+    font-size: 20px;
+    margin: 12px 0px;
+    font-weight: 500;
+  }
+  .data-card p{
+    font-size: 16px;
+
+  }
+  /* When the screen is narrow, each card will take up the full width */
+  @media (max-width: 768px) {
+    .data-card {
+      width: 100%;
+    }
+  }

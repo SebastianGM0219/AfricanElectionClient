@@ -2,12 +2,12 @@ import React from "react";
 import '../style/Home.css'
 
 import HowWeVote from "../components/Vote/HowWeVote";
-import DataSection from "../components/Data/DataSection";
-import PageWithNineCards from '../components/Data/PageWithNineCards'
+
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import Election from "../components/Election/Election";
 import data from '../assets/images/south-africa-location-map-flag-pin.webp'
+import DataCard from "../components/Data/DataCard";
 const DataPage = () => {
   return (
     <>
@@ -25,7 +25,7 @@ const DataPage = () => {
                 </div>
         <HowWeVote />
         <Election />
-        <PageWithNineCards />
+        <DataCard/>
 
 
         <Contact />

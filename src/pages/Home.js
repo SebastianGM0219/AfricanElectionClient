@@ -2,12 +2,12 @@ import React from "react";
 import '../style/Home.css'
 import About from "../components/About/About";
 import HowWeVote from "../components/Vote/HowWeVote";
-import DataSection from "../components/Data/DataSection";
-import PageWithThreeCards from "../components/Data/PageWithThreeCards";
+
 import News from "../components/News/News";
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import home from '../assets/images/Banner Image.jpg'
+import DataCard from "../components/Data/DataCard";
 const Home = () => {
 
   return (
@@ -42,7 +42,7 @@ const Home = () => {
       </div> */}
         <HowWeVote />
         <About />
-        <PageWithThreeCards />
+       <DataCard/>
         <News />
         <Contact />
         <Footer />
