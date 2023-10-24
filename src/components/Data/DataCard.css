@@ -3,8 +3,46 @@
     flex-wrap: wrap;
     margin: 0 auto;
     justify-content: center;
+    margin-bottom: 50px;
   }
-  
+  .check-boxes{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .major-card{
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .major-card button{
+    width: 25%;
+    text-align: center;
+    background-color: aliceblue;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 3px;
+
+  }
+ #first p{
+  font-weight: 600;
+ }
+ #first, #second{
+  margin-top: 50px;
+ }
+ #second p{
+  font-weight: 600;
+ }
+  .second
+  .check-boxes p{
+ 
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .check-boxes p input {
+    margin-right: 12px;
+  }
   .data-card {
     width: 35%; /* This will make two cards appear in a row */
     padding: 36px;

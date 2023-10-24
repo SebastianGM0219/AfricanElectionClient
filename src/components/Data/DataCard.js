@@ -1,9 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import './DataCard.css'
+import './DataCard.css';
 
 function DataCard() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showFirstContent, setShowFirstContent] = useState(true);
+  const [showSecondContent, setShowSecondContent] = useState(false);
+
+  const handleShowFirst = () => {
+    setShowFirstContent(true);
+    setShowSecondContent(false);
+  };
+
+  const handleShowSecond = () => {
+    setShowFirstContent(false);
+    setShowSecondContent(true);
+  };
+
+  const [selectedCheckboxes, setSelectedCheckboxes] = useState({
+    Presidential: true,
+    Parliamentary: false,
+  });
+  const [selectedCheckboxes1, setSelectedCheckboxes1] = useState({
+    PollingStation: false,
+    Country: true,
+    Region: false,
+    District: false,
+    Constituency: false,
+    State: false,
+  });
+
 
   useEffect(() => {
     // Define the API URL
@@ -35,22 +61,176 @@ function DataCard() {
       });
   }, []); // The empty array as a second argument ensures this effect runs only once
 
+  const handleCheckboxChange = (checkboxName) => {
+    setSelectedCheckboxes({
+      ...selectedCheckboxes,
+      [checkboxName]: !selectedCheckboxes[checkboxName],
+    });
+  };
+  const handleCheckboxChange1 = (checkboxName) => {
+    setSelectedCheckboxes1({
+      ...selectedCheckboxes1,
+      [checkboxName]: !selectedCheckboxes1[checkboxName],
+    });
+  };
+
+  const filteredData = data.filter(item => {
+    if (selectedCheckboxes.Presidential && selectedCheckboxes.Parliamentary) {
+      return true; // Show all data when both checkboxes are selected.
+    }
+    if (selectedCheckboxes.Presidential && item.Election_type === 'Presidential') {
+      return true;
+    }
+    if (selectedCheckboxes.Parliamentary && item.Election_type === 'Parliamentary') {
+      return true;
+    }
+    return false;
+  });
+
+  const filteredData1 = data.filter(item => {
+    if (selectedCheckboxes1.PollingStation && selectedCheckboxes1.Country  && selectedCheckboxes1.Region && selectedCheckboxes1.District && selectedCheckboxes1.Constituency && selectedCheckboxes1.State ) {
+      return true; // Show all data when both checkboxes are selected.
+    }
+    if(selectedCheckboxes1.PollingStation && item.Election_Size === "polling station"){
+      return true
+    }
+    if(selectedCheckboxes1.Country && item.Election_Size === "country"){
+      return true
+    }
+    if(selectedCheckboxes1.Region && item.Election_Size === "region"){
+      return true
+    }
+    if(selectedCheckboxes1.District && item.Election_Size === "district"){
+      return true
+    }
+    if(selectedCheckboxes1.Constituency && item.Election_Size === "constituency"){
+      return true
+    }
+    if(selectedCheckboxes1.State && item.Election_Size === "state"){
+      return true
+    }
+    
+    return false
+  });
+
   return (
-    <div>
-      
-      {loading ? (
-        <div>Loading...</div>
-      ) : (
-        <div className="card-container">
-          {data.map((item) => (
-            <div key={item.id} className="data-card">
-              <h2>{item.Date}</h2>
-              <h1>{item.Name}</h1>
-              <p>{item.Content}</p>
+    <div className='major-card'>
+      <button onClick={handleShowFirst}>All Datasets</button>
+      <button onClick={handleShowSecond}>All Units</button>
+      {showFirstContent && <div id='first' className="check-boxes">
+        <p>
+          <label>
+            <input
+              type="checkbox"
+              checked={selectedCheckboxes.Presidential}
+              onChange={() => handleCheckboxChange('Presidential')}
+            />
+            Presidential
+          </label>
+        </p>
+        <p>
+          <label>
+            <input
+              type="checkbox"
+              checked={selectedCheckboxes.Parliamentary}
+              onChange={() => handleCheckboxChange('Parliamentary')}
+            />
+            Parliamentary
+          </label>
+        </p>
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          <div className="card-container">
+            {filteredData.map((item) => (
+              <div key={item.id} className="data-card">
+                <h2>{item.Date}</h2>
+                <h1>{item.Name}</h1>
+                <p>{item.Content}</p>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>}
+      {showSecondContent &&
+        <div id='second' className="check-boxes">
+          <p>
+            <label>
+              <input
+                type="checkbox"
+                checked={selectedCheckboxes1.PollingStation}
+                onChange={() => handleCheckboxChange1('PollingStation')}
+              />
+              polling station
+            </label>
+          </p>
+          <p>
+            <label>
+              <input
+                type="checkbox"
+                checked={selectedCheckboxes1.Country}
+                onChange={() => handleCheckboxChange1('Country')}
+              />
+              country
+            </label>
+          </p>
+          <p>
+            <label>
+              <input
+                type="checkbox"
+                checked={selectedCheckboxes1.Region}
+                onChange={() => handleCheckboxChange1('Region')}
+              />
+              region
+            </label>
+          </p>
+          <p>
+            <label>
+              <input
+                type="checkbox"
+                checked={selectedCheckboxes1.District}
+                onChange={() => handleCheckboxChange1('District')}
+              />
+              district
+            </label>
+          </p>
+          <p>
+            <label>
+              <input
+                type="checkbox"
+                checked={selectedCheckboxes1.Constituency}
+                onChange={() => handleCheckboxChange1('Constituency')}
+              />
+              constituency
+            </label>
+          </p>
+          <p>
+            <label>
+              <input
+                type="checkbox"
+                checked={selectedCheckboxes1.State}
+                onChange={() => handleCheckboxChange1('State')}
+              />
+              state
+            </label>
+          </p>
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            <div className="card-container two">
+              {filteredData1.map((item) => (
+                <div key={item.id} className="data-card">
+                  <h2>{item.Date}</h2>
+                  <h1>{item.Name}</h1>
+                  <p>{item.Content}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      )}
+          )}
+        </div>}
+
+
+
     </div>
   );
 }
