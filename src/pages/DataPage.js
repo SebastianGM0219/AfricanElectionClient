@@ -9,6 +9,8 @@ import Election from "../components/Election/Election";
 import data from '../assets/images/south-africa-location-map-flag-pin.webp'
 import DataCard from "../components/Data/DataCard";
 const DataPage = () => {
+
+
   return (
     <>
       <div className="Home">
