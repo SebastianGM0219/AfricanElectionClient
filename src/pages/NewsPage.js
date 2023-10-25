@@ -50,7 +50,7 @@ const NewsPage = () => {
     useEffect(() => {
 
        
-        const url = "http://ec2-35-171-83-50.compute-1.amazonaws.com:443/search_news";
+        const url = "https://ec2-35-171-83-50.compute-1.amazonaws.com:443/search_news";
     
         // Define the fetch options
         const fetchOptions = {
