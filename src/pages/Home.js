@@ -40,7 +40,7 @@ const Home = () => {
           </p>
         </div>
       </div> */}
-        <HowWeVote />
+   
         <About />
        <DataCard/>
         <News />

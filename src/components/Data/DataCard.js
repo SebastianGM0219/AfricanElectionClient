@@ -6,6 +6,7 @@ function DataCard() {
   const [loading, setLoading] = useState(true);
   const [showFirstContent, setShowFirstContent] = useState(true);
   const [showSecondContent, setShowSecondContent] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleShowFirst = () => {
     setShowFirstContent(true);
@@ -15,6 +16,9 @@ function DataCard() {
   const handleShowSecond = () => {
     setShowFirstContent(false);
     setShowSecondContent(true);
+  };
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
   };
 
   const [selectedCheckboxes, setSelectedCheckboxes] = useState({
@@ -75,150 +79,118 @@ function DataCard() {
   };
 
   const filteredData = data.filter(item => {
-    if (selectedCheckboxes.Presidential && selectedCheckboxes.Parliamentary) {
-      return true; // Show all data when both checkboxes are selected.
-    }
-    if (selectedCheckboxes.Presidential && item.Election_type === 'Presidential') {
+    if ((selectedCheckboxes.Presidential && selectedCheckboxes.Parliamentary) || // "Presidential" checkbox is selected and item is of type "Presidential"
+      (searchQuery && item.Content.toLowerCase().includes(searchQuery.toLowerCase()))) {
       return true;
     }
-    if (selectedCheckboxes.Parliamentary && item.Election_type === 'Parliamentary') {
+    if (
+      (selectedCheckboxes.Presidential && item.Election_type === 'Presidential') || // "Presidential" checkbox is selected and item is of type "Presidential"
+      (searchQuery && item.Content.toLowerCase().includes(searchQuery.toLowerCase())) // Search query matches content
+    ) {
       return true;
     }
+    if ((selectedCheckboxes.Parliamentary && item.Election_type === 'Parliamentary') || // "Presidential" checkbox is selected and item is of type "Presidential"
+      (searchQuery && item.Content.toLowerCase().includes(searchQuery.toLowerCase()))) {
+      return true;
+    }
+    // if (searchQuery && item.Content.toLowerCase().includes(searchQuery.toLowerCase())) {
+    //   return true;
+    // }
     return false;
   });
 
   const filteredData1 = data.filter(item => {
-    if (selectedCheckboxes1.PollingStation && selectedCheckboxes1.Country  && selectedCheckboxes1.Region && selectedCheckboxes1.District && selectedCheckboxes1.Constituency && selectedCheckboxes1.State ) {
-      return true; // Show all data when both checkboxes are selected.
+    if (
+      selectedCheckboxes1.PollingStation &&
+      selectedCheckboxes1.Country &&
+      selectedCheckboxes1.Region &&
+      selectedCheckboxes1.District &&
+      selectedCheckboxes1.Constituency &&
+      selectedCheckboxes1.State
+    ) {
+      return true;
     }
-    if(selectedCheckboxes1.PollingStation && item.Election_Size === "polling station"){
-      return true
+    if ((selectedCheckboxes1.PollingStation && item.Election_Size === 'polling station') || // "Presidential" checkbox is selected and item is of type "Presidential"
+      (searchQuery && item.Content.toLowerCase().includes(searchQuery.toLowerCase()))) {
+      return true;
     }
-    if(selectedCheckboxes1.Country && item.Election_Size === "country"){
-      return true
+    if ((selectedCheckboxes1.Country && item.Election_Size === 'country') || // "Presidential" checkbox is selected and item is of type "Presidential"
+      (searchQuery && item.Content.toLowerCase().includes(searchQuery.toLowerCase()))) {
+      return true;
     }
-    if(selectedCheckboxes1.Region && item.Election_Size === "region"){
-      return true
+    if ((selectedCheckboxes1.Region && item.Election_Size === 'region') || // "Presidential" checkbox is selected and item is of type "Presidential"
+      (searchQuery && item.Content.toLowerCase().includes(searchQuery.toLowerCase()))) {
+      return true;
     }
-    if(selectedCheckboxes1.District && item.Election_Size === "district"){
-      return true
+    if ((selectedCheckboxes1.District && item.Election_Size === 'district') || // "Presidential" checkbox is selected and item is of type "Presidential"
+      (searchQuery && item.Content.toLowerCase().includes(searchQuery.toLowerCase()))) {
+      return true;
     }
-    if(selectedCheckboxes1.Constituency && item.Election_Size === "constituency"){
-      return true
+    if ((selectedCheckboxes1.Constituency && item.Election_Size === 'constituency') || // "Presidential" checkbox is selected and item is of type "Presidential"
+      (searchQuery && item.Content.toLowerCase().includes(searchQuery.toLowerCase()))) {
+      return true;
     }
-    if(selectedCheckboxes1.State && item.Election_Size === "state"){
-      return true
+    if ((selectedCheckboxes1.State && item.Election_Size === 'state') || // "Presidential" checkbox is selected and item is of type "Presidential"
+      (searchQuery && item.Content.toLowerCase().includes(searchQuery.toLowerCase()))) {
+      return true;
     }
-    
-    return false
+
+    return false;
   });
 
+
   return (
-    <div className='major-card'>
-      <button onClick={handleShowFirst}>All Datasets</button>
-      <button onClick={handleShowSecond}>All Units</button>
-      {showFirstContent && <div id='first' className="check-boxes">
-        <p>
-          <label>
-            <input
-              type="checkbox"
-              checked={selectedCheckboxes.Presidential}
-              onChange={() => handleCheckboxChange('Presidential')}
-            />
-            Presidential
-          </label>
-        </p>
-        <p>
-          <label>
-            <input
-              type="checkbox"
-              checked={selectedCheckboxes.Parliamentary}
-              onChange={() => handleCheckboxChange('Parliamentary')}
-            />
-            Parliamentary
-          </label>
-        </p>
-        {loading ? (
-          <div>Loading...</div>
-        ) : (
-          <div className="card-container">
-            {filteredData.map((item) => (
-              <div key={item.id} className="data-card">
-                <h2>{item.Date}</h2>
-                <h1>{item.Name}</h1>
-                <p>{item.Content}</p>
-              </div>
-            ))}
+    <>
+      <div className="Home">
+        <div className="How-To-Vote">
+          <div className="cont">
+            <p>HOW</p>
+            <p>WE</p>
+            <p>VOTED IN</p>
+            <p className="year">2023</p>
           </div>
-        )}
-      </div>}
-      {showSecondContent &&
-        <div id='second' className="check-boxes">
+          <div className="search">
+            <input
+              type="text"
+              placeholder="Search here"
+              value={searchQuery}
+              onChange={handleSearchChange}
+            />
+            <br />
+            <button>DONE</button>
+          </div>
+        </div>
+      </div>
+      <div className='major-card'>
+        <button className={showFirstContent ? 'active-button' : 'inactive-button'} onClick={handleShowFirst}>All Datasets</button>
+        <button className={showSecondContent ? 'active-button' : 'inactive-button'} onClick={handleShowSecond}>All Units</button>
+        {showFirstContent && <div id='first' className="check-boxes">
           <p>
             <label>
               <input
                 type="checkbox"
-                checked={selectedCheckboxes1.PollingStation}
-                onChange={() => handleCheckboxChange1('PollingStation')}
+                checked={selectedCheckboxes.Presidential}
+                onChange={() => handleCheckboxChange('Presidential')}
               />
-              polling station
+              Presidential
             </label>
           </p>
           <p>
             <label>
               <input
                 type="checkbox"
-                checked={selectedCheckboxes1.Country}
-                onChange={() => handleCheckboxChange1('Country')}
+                checked={selectedCheckboxes.Parliamentary}
+                onChange={() => handleCheckboxChange('Parliamentary')}
               />
-              country
+              Parliamentary
             </label>
           </p>
-          <p>
-            <label>
-              <input
-                type="checkbox"
-                checked={selectedCheckboxes1.Region}
-                onChange={() => handleCheckboxChange1('Region')}
-              />
-              region
-            </label>
-          </p>
-          <p>
-            <label>
-              <input
-                type="checkbox"
-                checked={selectedCheckboxes1.District}
-                onChange={() => handleCheckboxChange1('District')}
-              />
-              district
-            </label>
-          </p>
-          <p>
-            <label>
-              <input
-                type="checkbox"
-                checked={selectedCheckboxes1.Constituency}
-                onChange={() => handleCheckboxChange1('Constituency')}
-              />
-              constituency
-            </label>
-          </p>
-          <p>
-            <label>
-              <input
-                type="checkbox"
-                checked={selectedCheckboxes1.State}
-                onChange={() => handleCheckboxChange1('State')}
-              />
-              state
-            </label>
-          </p>
+
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <div className="card-container two">
-              {filteredData1.map((item) => (
+            <div className="card-container">
+              {filteredData.map((item) => (
                 <div key={item.id} className="data-card">
                   <h2>{item.Date}</h2>
                   <h1>{item.Name}</h1>
@@ -228,10 +200,89 @@ function DataCard() {
             </div>
           )}
         </div>}
+        {showSecondContent &&
+          <div id='second' className="check-boxes">
+            <p>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={selectedCheckboxes1.PollingStation}
+                  onChange={() => handleCheckboxChange1('PollingStation')}
+                />
+                polling station
+              </label>
+            </p>
+            <p>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={selectedCheckboxes1.Country}
+                  onChange={() => handleCheckboxChange1('Country')}
+                />
+                country
+              </label>
+            </p>
+            <p>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={selectedCheckboxes1.Region}
+                  onChange={() => handleCheckboxChange1('Region')}
+                />
+                region
+              </label>
+            </p>
+            <p>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={selectedCheckboxes1.District}
+                  onChange={() => handleCheckboxChange1('District')}
+                />
+                district
+              </label>
+            </p>
+            <p>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={selectedCheckboxes1.Constituency}
+                  onChange={() => handleCheckboxChange1('Constituency')}
+                />
+                constituency
+              </label>
+            </p>
+            <p>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={selectedCheckboxes1.State}
+                  onChange={() => handleCheckboxChange1('State')}
+                />
+                state
+              </label>
+            </p>
+
+
+            {loading ? (
+              <div>Loading...</div>
+            ) : (
+              <div className="card-container two">
+                {filteredData1.map((item) => (
+                  <div key={item.id} className="data-card">
+                    <h2>{item.Date}</h2>
+                    <h1>{item.Name}</h1>
+                    <p>{item.Content}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>}
 
 
 
-    </div>
+      </div>
+    </>
   );
 }
 

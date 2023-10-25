@@ -16,9 +16,9 @@
     margin: 0 auto;
   }
   .major-card button{
-    width: 25%;
+    width: 31%;
     text-align: center;
-    background-color: aliceblue;
+    
     padding: 10px;
     font-weight: 700;
     font-size: 18px;
@@ -27,13 +27,31 @@
   }
  #first p{
   font-weight: 600;
+    width: 62%;
+    margin: 0 auto;
+    text-align: left;
  }
  #first, #second{
-  margin-top: 50px;
+  margin-top: 20px;
+ }
+ .card-container p{
+  width: 100%!important;
  }
  #second p{
   font-weight: 600;
+    width: 62%;
+    margin: 0 auto;
+    text-align: left;
  }
+ .active-button {
+  background-color: #B52323; /* Change this to the color you want for the active button */
+  color: #fff; /* Text color for the active button */
+}
+
+.inactive-button {
+  background-color: #ccc; /* Change this to the color you want for the inactive button */
+  color: #000; /* Text color for the inactive button */
+}
   .second
   .check-boxes p{
  

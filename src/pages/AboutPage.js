@@ -26,7 +26,7 @@ const AboutPage = () => {
                         </p>
                     </div>
                 </div>
-                <HowWeVote />
+           
                 <About />
                 <DataCard/>
                 <TeamSection teamData={teamData}/>
