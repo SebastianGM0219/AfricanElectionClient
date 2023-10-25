@@ -37,7 +37,7 @@ function DataCard() {
 
   useEffect(() => {
     // Define the API URL
-    const url = "http://ec2-35-171-83-50.compute-1.amazonaws.com:443/search_election_bystate";
+    const url = "https://ec2-35-171-83-50.compute-1.amazonaws.com:443/search_election_bystate";
 
     // Define the fetch options
     const fetchOptions = {
