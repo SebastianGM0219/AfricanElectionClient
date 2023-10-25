@@ -9,64 +9,23 @@ import news1 from '../assets/images/lp.jpeg'
 // Create a NewsCard component
 const NewsCard = ({ data, onClick, isSelected }) => {
     return (
-        <div
+        <a
+        href= {data.link}
             className={`card ${isSelected ? "active" : ""}`}
             onClick={() => onClick(data)}
         >
-            <img src={data.img}  />
+            <img src={data.image}  />
             <h2>{data.title}</h2>
-            <p>{data.des}</p>
-        </div>
+            <p>{data.snippet}</p>
+        </a>
     );
 };
 
 const NewsPage = () => {
-    const data = [
-        {
-            id: 1,
-            img: require("../assets/images/news-box.png"),
-            title: "Here will come the title1",
-            des: "here will come the description of the news for this first 1"
-        },
-        {
-            id: 2,
-            img: require("../assets/images/news-box.png"),
-            title: "Here will come the title",
-            des: "here will come the description of the news for second 1"
-        },
-        {
-            id: 3,
-            img: require("../assets/images/news-box.png"),
-            title: "Here will come the title",
-            des: "here will come the description of the news for the third one"
-        },
-        {
-            id: 4,
-            img: require("../assets/images/news-box.png"),
-            title: "Here will come the title",
-            des: "here will come the description of the news for the fourth one"
-        },
-        {
-            id: 5,
-            img: require("../assets/images/news-box.png"),
-            title: "Here will come the title",
-            des: "here will come the description of the news or fifth"
-        },
-        {
-            id: 6,
-            img: require("../assets/images/news-box.png"),
-            title: "Here will come the title",
-            des: "here will come the description of the news for sixth"
-        },
-        {
-            id: 7,
-            img: require("../assets/images/news-box.png"),
-            title: "Here will come the title",
-            des: "here will come the description of the news for seventh"
-        },
 
-    ]
-
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+   
     const itemsPerPage = 6; // Number of items to show per page
     const totalPages = Math.ceil(data.length / itemsPerPage);
 
@@ -89,13 +48,47 @@ const NewsPage = () => {
     };
 
     useEffect(() => {
-        // Ensure the current page is within the valid range
-        if (currentPage < 1) {
-            setCurrentPage(1);
-        } else if (currentPage > totalPages) {
-            setCurrentPage(totalPages);
-        }
-    }, [currentPage, totalPages]);
+
+       
+        const url = "http://ec2-35-171-83-50.compute-1.amazonaws.com:443/search_news";
+    
+        // Define the fetch options
+        const fetchOptions = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+        };
+    
+        // Fetch the data
+        fetch(url, fetchOptions)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+
+            return response.json();
+          })
+          .then(jsonData => {
+            setData(jsonData);
+            setLoading(false);
+          })
+          .catch(error => {
+            console.error("Error occurred:", error);
+            setLoading(false);
+          });
+
+     });
+
+    // useEffect(() => {
+    //     // Ensure the current page is within the valid range
+
+    //     if (currentPage < 1) {
+    //         setCurrentPage(1);
+    //     } else if (currentPage > totalPages) {
+    //         setCurrentPage(totalPages);
+    //     }
+    // }, [currentPage, totalPages]);
 
     // Calculate the index range for the current page
     const startIndex = (currentPage - 1) * itemsPerPage;
@@ -118,7 +111,7 @@ const NewsPage = () => {
                         </p>
                     </div>
                 </div>
-                <div className="news news-detail">
+                {/* <div className="news news-detail">
                     
                     <div> <div class="container1">
                         <img class="left-image" src={elipse} alt="Left Image" />
@@ -140,7 +133,7 @@ const NewsPage = () => {
                     </div></div>
 
 
-                </div>
+                </div> */}
                 <div className="news-items">
                     <div className="data-heading">
                         <span></span>
@@ -150,10 +143,10 @@ const NewsPage = () => {
                     <div className="card-container">
                         {currentData.map((item) => (
                             <NewsCard
-                                key={item.id}
+//                                key={item.id}
                                 data={item}
                                 onClick={handleNewsCardClick}
-                                isSelected={selectedNews.id === item.id}
+//                                isSelected={selectedNews.id === item.id}
                             />
                         ))}
                     </div>
