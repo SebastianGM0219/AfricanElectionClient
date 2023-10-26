@@ -191,11 +191,11 @@ function DataCard() {
           ) : (
             <div className="card-container">
               {filteredData.map((item) => (
-                <div key={item.id} className="data-card">
+                <a href={item.Link} key={item.id} className="data-card">
                   <h2>{item.Date}</h2>
                   <h1>{item.Name}</h1>
                   <p>{item.Content}</p>
-                </div>
+                </a>
               ))}
             </div>
           )}
