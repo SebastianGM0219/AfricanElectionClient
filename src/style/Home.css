@@ -249,12 +249,15 @@ body {
 
 .contact-content {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  width:70%;
+
+  margin: 0 auto;
 }
 
 .c-t {
   width: 50%;
-  position: absolute;
+  /* position: absolute; */
   left: 13%;
   z-index: -1;
   top: 26%;
@@ -266,7 +269,7 @@ body {
 
   width: 40%;
   background-color: rgb(255, 255, 255);
-  position: absolute;
+  /* position: absolute; */
   right: 20%;
   top: 15%;
   padding: 25px;
@@ -728,6 +731,7 @@ body {
   display: flex;
   align-items: center;
   border-radius: 10px;
+  justify-content: center;
 }
 
 .man-contact .img {
@@ -737,7 +741,31 @@ body {
 .man-contact .boxes {
   display: flex;
   gap: 10px;
-  width: 60%;
+  width: 80%;
+  background-color: #B52323;
+}
+.EmailPhon-new{
+  display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+
+}
+.EmailPhon-new div{
+  width: 30%;
+  background-color: #B52323;
+  padding: 50px;
+  border-radius: 12px;
+
+}
+.EmailPhon-new div h2{
+  color: white;
+  font-weight: 600;
+}
+.EmailPhon-new div p{
+  word-wrap: break-word;
+  color: white;
 }
 
 .man-contact .boxes div {
@@ -756,6 +784,7 @@ body {
 
 .boxes p {
   font-weight: 600;
+  word-wrap: break-word;
 }
 
 .news .newsdetail {

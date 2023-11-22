@@ -7,6 +7,7 @@ import News from "../components/News/News";
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import home from '../assets/images/Banner Image.jpg'
+import homes from '../assets/images/1.webp'
 import DataCard from "../components/Data/DataCard";
 const Home = () => {
 
@@ -15,7 +16,7 @@ const Home = () => {
 
       <div className="Home">
         <div class="container">
-          <img class="image" src={home} alt="Responsive Image" />
+          <img class="image" src={homes} alt="Responsive Image" />
           <div class="overlay"></div>
           <div className="text Big-heading">
           <p>

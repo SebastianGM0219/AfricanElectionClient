@@ -13,15 +13,14 @@ const Contact = () => {
                 <div className="contact-content">
                     <div className="c-t">
                         <img src={contacttext}  />
-                        <h2>Book your appointment</h2>
+                        {/* <h2>Book your appointment</h2> */}
                         <p>Fill out this form and we promise to get back to you within 24 hours
                         </p>
                     </div>
                     <div className="c-f">
-                        <input type="text" placeholder="Names" /> <br />
+                        <input type="text" placeholder="Name" /> <br />
                         <input type="text" placeholder="Email" /> <br />
-                        <input type="text" placeholder="Phone" />
-                        <input type="text" placeholder="Zip code" />
+                       
                         <textarea placeholder="Message" name="" id="" cols="20" rows="5"></textarea> <br />
                         <button>Confirm</button>
 

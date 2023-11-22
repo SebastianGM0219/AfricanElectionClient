@@ -6,10 +6,10 @@ const HowWeVote = () => {
             <div className="Home">
                 <div className="How-To-Vote">
                     <div className="cont">
-                        <p>HOW</p>
+                        {/* <p>HOW</p>
                         <p>WE</p>
                         <p>VOTED IN</p>
-                        <p className="year">2023</p>
+                        <p className="year">2023</p> */}
                     </div>
                     <div className="search">
                         <input type="text" placeholder="Search" /> <br />

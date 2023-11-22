@@ -8,7 +8,7 @@ import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import TeamSection from '../components/Team/TeamSection';
 import teamData from '../components/Team/teamData';
-import about from '../assets/images/About-bg.jpg'
+import about from '../assets/images/3.jpg'
 import DataCard from '../components/Data/DataCard';
 const AboutPage = () => {
     return (
@@ -21,15 +21,16 @@ const AboutPage = () => {
                     <div className="text Big-heading">
                         <p>
 
-                            <span className="THE">ABOUT US </span>
+                            <span className="THE">ABOUT</span>
 
                         </p>
                     </div>
                 </div>
            
                 <About />
-                <DataCard/>
                 <TeamSection teamData={teamData}/>
+                <DataCard/>
+                
                 <News />
                 <Contact />
                 <Footer />

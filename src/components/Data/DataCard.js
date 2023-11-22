@@ -143,12 +143,12 @@ function DataCard() {
     <>
       <div className="Home">
         <div className="How-To-Vote">
-          <div className="cont">
+          {/* <div className="cont">
             <p>HOW</p>
             <p>WE</p>
             <p>VOTED IN</p>
             <p className="year">2023</p>
-          </div>
+          </div> */}
           <div className="search">
             <input
               type="text"
@@ -156,8 +156,8 @@ function DataCard() {
               value={searchQuery}
               onChange={handleSearchChange}
             />
-            <br />
-            <button>DONE</button>
+      
+            
           </div>
         </div>
       </div>
@@ -202,16 +202,7 @@ function DataCard() {
         </div>}
         {showSecondContent &&
           <div id='second' className="check-boxes">
-            <p>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={selectedCheckboxes1.PollingStation}
-                  onChange={() => handleCheckboxChange1('PollingStation')}
-                />
-                polling station
-              </label>
-            </p>
+            
             <p>
               <label>
                 <input
@@ -252,16 +243,7 @@ function DataCard() {
                 constituency
               </label>
             </p>
-            <p>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={selectedCheckboxes1.State}
-                  onChange={() => handleCheckboxChange1('State')}
-                />
-                state
-              </label>
-            </p>
+            
 
 
             {loading ? (

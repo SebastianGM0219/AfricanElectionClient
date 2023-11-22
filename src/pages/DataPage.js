@@ -6,7 +6,7 @@ import HowWeVote from "../components/Vote/HowWeVote";
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import Election from "../components/Election/Election";
-import data from '../assets/images/south-africa-location-map-flag-pin.webp'
+import data from '../assets/images/4.jpg'
 import DataCard from "../components/Data/DataCard";
 const DataPage = () => {
 
