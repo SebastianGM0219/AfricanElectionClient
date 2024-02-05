@@ -3,22 +3,30 @@ import './DataCard.css';
 
 function DataCard() {
   const [data, setData] = useState([]);
+  const [data1, setData1] = useState([]);
+
   const [loading, setLoading] = useState(true);
   const [showFirstContent, setShowFirstContent] = useState(true);
   const [showSecondContent, setShowSecondContent] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [text, setText] = useState('');
 
   const handleShowFirst = () => {
     setShowFirstContent(true);
     setShowSecondContent(false);
   };
 
+  const searchClick = () => {
+    setSearchQuery(text);
+  }
+
   const handleShowSecond = () => {
     setShowFirstContent(false);
     setShowSecondContent(true);
   };
   const handleSearchChange = (event) => {
-    setSearchQuery(event.target.value);
+    // setSearchQuery(event.target.value);
+    setText(event.target.value);
   };
 
   const [selectedCheckboxes, setSelectedCheckboxes] = useState({
@@ -37,14 +45,50 @@ function DataCard() {
 
   useEffect(() => {
     // Define the API URL
-    const url = "https://ec2-35-171-83-50.compute-1.amazonaws.com:443/search_election_bystate";
+//    const url = "https://ec2-35-171-83-50.compute-1.amazonaws.com:443/search_election_bystate";
+    const url = "http://localhost:443/search_election_bystate";
 
     // Define the fetch options
+    let options={};
+//    !selectedCheckboxes.Presidential && !selectedCheckboxes.Parliamentary
+
+    let ElectionSizeArray = [];
+    let ElectionTypeArray = [];
+    if(selectedCheckboxes.Presidential)
+      ElectionTypeArray.push("Presidential");     
+    if(selectedCheckboxes.Parliamentary)
+      ElectionTypeArray.push("Parliamentary");     
+    if(selectedCheckboxes1.Country)
+      ElectionSizeArray.push("Country");
+    if(selectedCheckboxes1.Region)
+      ElectionSizeArray.push("Region");
+    if(selectedCheckboxes1.District)
+      ElectionSizeArray.push("District");
+    if(selectedCheckboxes1.Constituency)
+      ElectionSizeArray.push("Constituency");
+
+    if(showSecondContent) {
+      options.Election_size = ElectionSizeArray;
+    }
+    if(showFirstContent) {
+      options.Election_type = ElectionTypeArray;
+    }
+    if(searchQuery) {
+      options.Comment = searchQuery;
+    }
+    
+    console.log("e==================step==========")
+    console.log(options);
+    console.log("e==================step==========")
+
+    
+  
     const fetchOptions = {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
-      },
+      }, 
+       body: JSON.stringify(options)
     };
 
     // Fetch the data
@@ -56,14 +100,18 @@ function DataCard() {
         return response.json();
       })
       .then(jsonData => {
-        setData(jsonData);
+        console.log(jsonData);
+        if(showFirstContent)
+          setData(jsonData);
+        if(showSecondContent)
+          setData1(jsonData);
         setLoading(false);
       })
       .catch(error => {
         console.error("Error occurred:", error);
         setLoading(false);
       });
-  }, []); // The empty array as a second argument ensures this effect runs only once
+  }, [selectedCheckboxes1, selectedCheckboxes, searchQuery]); // The empty array as a second argument ensures this effect runs only once
 
   const handleCheckboxChange = (checkboxName) => {
     setSelectedCheckboxes({
@@ -149,16 +197,18 @@ function DataCard() {
             <p>VOTED IN</p>
             <p className="year">2023</p>
           </div> */}
-          <div className="search">
+          <div className="search" style={{ display: 'flex', alignItems: 'center' }}>
             <input
               type="text"
               placeholder="Search here"
-              value={searchQuery}
+              value={text}
               onChange={handleSearchChange}
+              // style={{ marginRight: '20px' }}
             />
-      
-            
-          </div>
+            <button style={{ marginTop: '20px' }} onClick={searchClick}>
+              Search
+            </button>
+          </div>                             
         </div>
       </div>
       <div className='major-card'>
@@ -190,7 +240,7 @@ function DataCard() {
             <div>Loading...</div>
           ) : (
             <div className="card-container">
-              {filteredData.map((item) => (
+              {data.map((item) => (
                 <a href={item.Link} key={item.id} className="data-card">
                   <h2>{item.Date}</h2>
                   <h1>{item.Name}</h1>
@@ -250,7 +300,7 @@ function DataCard() {
               <div>Loading...</div>
             ) : (
               <div className="card-container two">
-                {filteredData1.map((item) => (
+                {data1.map((item) => (
                   <div key={item.id} className="data-card">
                     <h2>{item.Date}</h2>
                     <h1>{item.Name}</h1>

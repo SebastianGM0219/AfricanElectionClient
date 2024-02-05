@@ -2,7 +2,7 @@ import React from "react";
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import EmailPhone from "../components/EmailPhone/EmailPhone";
-import info from '../assets/images/Contact.jpg'
+import info from '../assets/images/contact_new.jpg'
 const ContactPage=()=>{
     return(
         <>

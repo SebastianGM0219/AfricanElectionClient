@@ -6,7 +6,7 @@ import Presidential from "../components/Election/PresedentialResult"
 import Turnout from "../components/VoterTurnout/Turnout"
 import VoteAbroadleft from "../components/Abroad/VoteAbroadleft"
 import VoteAbroadright from "../components/Abroad/VoteAbroadright"
-import info from '../assets/images/Contact.jpg'
+import info from '../assets/images/info.png'
 
 const Infographics = () => {
     return (
@@ -16,7 +16,7 @@ const Infographics = () => {
                     <img class="image" src={info} alt="Responsive Image" />
                     <div class="overlay"></div>
                     <div className="text Big-heading">
-                        <p>
+                        <p >
 
                             <span className="THE">INFOGRAPHICS </span>
 
