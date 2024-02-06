@@ -45,8 +45,8 @@ function DataCard() {
 
   useEffect(() => {
     // Define the API URL
-//    const url = "https://ec2-35-171-83-50.compute-1.amazonaws.com:443/search_election_bystate";
-    const url = "http://localhost:443/search_election_bystate";
+    const url = "https://african-election-server-mkkk.vercel.app:443/search_election_bystate";
+//    const url = "http://localhost:443/search_election_bystate";
 
     // Define the fetch options
     let options={};
